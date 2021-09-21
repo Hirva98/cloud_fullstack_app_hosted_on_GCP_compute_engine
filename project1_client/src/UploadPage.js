@@ -55,7 +55,8 @@ const UploadPage = () => {
             // } else {
             //     setError(res.data.msg)
             // }
-            console.log(res)
+		console.log('hi')            
+		console.log(res)
         })
         .catch(er => console.log(er))
   }

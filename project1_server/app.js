@@ -36,7 +36,7 @@ app.post('/students/signup',(req, res, next) => {
     function(error, results, fields) {
       if (error) throw error;
       res.json(results);
-      connection.end();
+    
       
     }
  );
