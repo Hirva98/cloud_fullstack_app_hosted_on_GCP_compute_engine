@@ -25,7 +25,7 @@ const UploadPage = () => {
     console.log('Failed:', errorInfo);
   };
   const getdata = () => {
-    fetch(`http://localhost:8080/students/signup`)
+    fetch(`http://35.233.223.4:8080/students/signup`)
   .then((response) => response.json())
   .then(users => console.log(users));
   }
