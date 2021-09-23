@@ -64,16 +64,10 @@ const UploadPage = () => {
     <div>
       <Title level={3} className="page-title-bar-title" >Upload a Student here</Title>
       <Row>
-      <Col className="join_text">
-                          <Button
-                            type="link"
-                            onClick={()=>{history.push('/')}}
-                           // style={{ float: "right" }}
-                          >
-                            Home Page
-                          </Button>
-                        </Col>
-                        </Row>
+            <Col className="place">
+                <Button  className="button-placement"  onClick={()=>{history.push('/')}}>Home Page</Button>
+            </Col>
+        </Row>
       <Form 
       name="basic"
       labelCol={{ span: 8 }}

@@ -30,3 +30,16 @@
     padding-left: 10px;
     justify-content: center;
 }
+.button-placement{
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  justify-content: center;
+}
+
+.place{
+  padding-bottom: 10px;
+  padding-left: 700px;
+  justify-content: center;
+ 
+}
