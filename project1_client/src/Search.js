@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import Axios from 'axios'
-import { AutoComplete, Button, Card, Col, Dropdown, Row, Typography,Menu, Divider,Input, Space ,} from 'antd'
+import { AutoComplete, Button, Card, Col, Dropdown, Row, Typography,Menu, Divider,Input, Space ,Table} from 'antd'
 import { DownOutlined, SearchOutlined,AudioOutlined  } from "@ant-design/icons";
 import { serverPath }from './path'
 import './Search.css'
@@ -46,7 +46,40 @@ const Search = () => {
           });
     
   };
-  
+  const columns = [
+    {
+      title: 'Student ID',
+      dataIndex: 'Student_ID',
+      key: 'Student_ID',
+     
+    },
+    {
+      title: 'Firstname',
+      dataIndex: 'Firstname',
+      key: 'Firstname',
+    },
+    {
+      title: 'Lastname',
+      dataIndex: 'Lastname',
+      key: 'Lastname',
+    },
+    {
+      title: 'Email',
+      key: 'Email',
+      dataIndex: 'Email',
+    },
+    {
+      title: 'Mailing Address',
+      key: 'Mailing Address',
+      dataIndex: 'Address',
+    },
+    {
+      title: 'GPA',
+      key: 'GPA',
+      dataIndex: 'GPA',
+    },
+  ];
+
   
 
 
@@ -55,112 +88,24 @@ return (
         <Fragment>
         <Title level={3} className="page-title-bar-title" >Search for a Student here</Title>
         <Row>
-
-        <Col xs={24} className="join_text">
-                          <Button
-                            type="link"
-                            onClick={()=>{history.push('/')}}
-                           // style={{ float: "right" }}
-                          >
-                            Home Page
-                          </Button>
-                        </Col>
-          
+            <Col className="place">
+                <Button  className="button-placement"  onClick={()=>{history.push('/')}}>Home Page</Button>
+            </Col>
         </Row>
         
         <Space className="search_bar" direction="vertical">
-    <Search placeholder="Search by id, fname or lname" onSearch={()=>{searchAll()}} onChange={(e) => {setSearchValue(e.target.value)}} style={{ width: 100 }} />
+          <Search placeholder="Search by id, fname or lname" onSearch={()=>{searchAll()}} onChange={(e) => {setSearchValue(e.target.value)}} style={{ width: 100 }} />
     
  
    
-  </Space>
-        {searchedData && searchedData.length > 0 && (
-          <div>
-            <Row>
-              <Col xs={24}>
-                <div class="main">
-                  <h4 style={{ marginTop: "30px", marginBottom: "30px" }}>
-                    {'Searched Students by  "' + searchValue + '"'}
-                  </h4>
-                </div>
-              </Col>
-
-              <Col xs={24}>
-                <Row gutter={[40, 16]}>
-                  {searchedData &&
-                    searchedData.map((d, index) => (
-                      <Col className="gutter-row" span={6} key={index}>
-                        <Card
-                          hoverable
-                          bordered
-                          style={{ width: "80%", marginLeft: "30px" }}
-                          //cover={<img alt="example" src={d.roomImageUrl} />}
-                          className="join_cards"
-                        >
-                          <Row>
-                            <Col xs={24} className="join_text">
-                             Student ID:
-                              <Typography.Text
-                                className="join_text"
-                                style={{ float: "right" }}
-                                level={5}
-                              >
-                                {d.Student_ID}
-                              </Typography.Text>
-                            </Col>
-                            <Col xs={24} className="join_text">
-                              Firstname:{" "}
-                              <Typography.Text
-                                className="join_text"
-                                style={{ float: "right" }}
-                              >
-                                {d.Firstname}
-                              </Typography.Text>
-                            </Col>
-                            <Col xs={24} className="join_text">
-                              Lastname:{" "}
-                              <Typography.Text
-                                className="join_text"
-                                style={{ float: "right" }}
-                              >
-                                {d.Lastname}
-                              </Typography.Text>
-                            </Col><Col xs={24} className="join_text">
-                              Email:{" "}
-                              <Typography.Text
-                                className="join_text"
-                                style={{ float: "right" }}
-                              >
-                                {d.Email}
-                              </Typography.Text>
-                            </Col><Col xs={24} className="join_text">
-                              Mailing Address:{" "}
-                              <Typography.Text
-                                className="join_text"
-                                style={{ float: "right" }}
-                              >
-                                {d.Address}
-                              </Typography.Text>
-                            </Col><Col xs={24} className="join_text">
-                              GPA:{" "}
-                              <Typography.Text
-                                className="join_text"
-                                style={{ float: "right" }}
-                              >
-                                {d.GPA}
-                              </Typography.Text>
-                            </Col>
-                            
-                          </Row>
-                        </Card>
-                      </Col>
-                    ))}
-                </Row>
-              </Col>
-            </Row>
-            <Divider />
-          </div>
-        )}
+       </Space>
+      <Row>
+          <Col xs={24}>
+          <Table columns={columns} dataSource={searchedData} />
+          </Col>
+        </Row>
+          
+       
         </Fragment>
 
     </div>

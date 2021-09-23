@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import Axios from 'axios'
-import { Button, Card, Col, Row, Typography } from 'antd';
+import { Button, Card, Col, Row, Typography, Table, Tag, Space } from 'antd';
 import './Display.css';
 import { serverPath }from './path'
 
@@ -22,6 +22,40 @@ const Display = () => {
    
    }
 
+   const columns = [
+    {
+      title: 'Student ID',
+      dataIndex: 'Student_ID',
+      key: 'Student_ID',
+     
+    },
+    {
+      title: 'Firstname',
+      dataIndex: 'Firstname',
+      key: 'Firstname',
+    },
+    {
+      title: 'Lastname',
+      dataIndex: 'Lastname',
+      key: 'Lastname',
+    },
+    {
+      title: 'Email',
+      key: 'Email',
+      dataIndex: 'Email',
+    },
+    {
+      title: 'Mailing Address',
+      key: 'Mailing Address',
+      dataIndex: 'Address',
+    },
+    {
+      title: 'GPA',
+      key: 'GPA',
+      dataIndex: 'GPA',
+    },
+  ];
+
 useEffect(() =>{
     viewRecords()
 }, [])
@@ -30,19 +64,16 @@ return (
         <Fragment>
         <Title level={3} className="page-title-bar-title" >All Students</Title>
         <Row>
-
-        <Col xs={24} className="join_text">
-                          <Button
-                            type="link"
-                            onClick={()=>{history.push('/')}}
-                           // style={{ float: "right" }}
-                          >
-                            Home Page
-                          </Button>
-                        </Col>
-          
+            <Col className="place">
+                <Button  className="button-placement"  onClick={()=>{history.push('/')}}>Home Page</Button>
+            </Col>
         </Row>
         <Row>
+          <Col xs={24}>
+          <Table columns={columns} dataSource={viewData} />
+          </Col>
+        </Row>
+        {/* <Row>
           <Col xs={24}>
               
             <Row gutter={[40, 16]}>
@@ -122,7 +153,7 @@ return (
                 ))}
             </Row>
           </Col>
-        </Row>
+        </Row> */}
         </Fragment>
     </div>
     );

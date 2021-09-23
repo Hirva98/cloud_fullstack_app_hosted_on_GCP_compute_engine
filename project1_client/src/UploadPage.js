@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './UploadPage.css';
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { Form, Input, Button, Checkbox, Row, Col, Typography } from 'antd';
+import { Form, Input, Button, Checkbox, Row, Col, Typography, Alert } from 'antd';
 import Axios from 'axios'
 import { serverPath }from './path'
 
@@ -28,6 +28,7 @@ const UploadPage = () => {
   };
   
   const filldata = () => {
+    <Alert message="Student added" type="success" />
     var data ={
       Student_ID : Student_ID,
       Firstname : Firstname,
