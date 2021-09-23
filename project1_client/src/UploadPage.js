@@ -4,6 +4,8 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Form, Input, Button, Checkbox } from 'antd';
 import Axios from 'axios'
+import { serverPath }from './path'
+
 
 const UploadPage = () => {
 
@@ -24,11 +26,7 @@ const UploadPage = () => {
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
   };
-  const getdata = () => {
-    fetch(`http://35.233.223.4:8080/students/signup`)
-  .then((response) => response.json())
-  .then(users => console.log(users));
-  }
+  
   const filldata = () => {
     var data ={
       Student_ID : Student_ID,
@@ -40,7 +38,7 @@ const UploadPage = () => {
     }
     console.log(data)
         
-        Axios.post('http://35.233.223.4:8080/students/signup', {
+        Axios.post(serverPath.local +'/students/signup', {
           Student_ID : Student_ID,
           Firstname : Firstname,
           Lastname : Lastname,

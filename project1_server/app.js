@@ -42,6 +42,21 @@ app.post('/students/signup',(req, res, next) => {
  );
 });
 
+app.post('/api/all/',(req, res, next) => {
+  console.log(req.body)
+  const data = req.body.searchValue;
+  
+  connection.query(
+    `SELECT * FROM students WHERE (Student_ID LIKE '%${data}%' OR Firstname LIKE '%${data}%' OR Lastname LIKE '%${data}%')`,
+    function(error, results, fields) {
+      if (error) throw error;
+      res.json(results);
+    
+      
+    }
+ );
+});
+
 app.post('/signup', (req,res)=>{
 
   const Student_ID= parseInt(req.body.Student_ID);
@@ -82,8 +97,7 @@ app.post('/getall', (req,res)=>{
 
   });
 });
-app.route('/students/all')
-  .get(function(req, res, next) {
+app.get('/students/all',(req, res, next) => {
     connection.query(
       "SELECT * FROM students",
       function(error, results, fields) {
