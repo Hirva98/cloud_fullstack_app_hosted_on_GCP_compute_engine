@@ -4,7 +4,7 @@
   
   .join_text{
     padding-bottom: 10px;
-    padding-left: 950px;
+    padding-left: 0px;
     justify-content: center;
   }
   .page-title-bar-title {
@@ -15,13 +15,13 @@
   
 .form_component{
     padding-bottom: 10px;
-    padding-left: 900px;
+    padding-left: 670px;
     justify-content: center;
 }
 
 .form_submit{
     padding-bottom: 10px;
-    padding-left: 960px;
+    padding-left: 730px;
     justify-content: center;
 }
   

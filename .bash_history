@@ -149,3 +149,28 @@ node app.js
 ls
 nano app.js
 node app.js
+las
+ls
+cd project1_client
+npm start
+cd ..
+git status
+git add .
+git status
+git commit -m "working instance"
+git push origin -u master
+ls
+cd project1_server/
+node app.js
+ls
+nano app.js
+node app.js
+nano app.js
+node app.js
+ls
+git pull origin master
+cd project1_server/
+node app.js
+git pull origin master
+cd project1_client/
+npm start

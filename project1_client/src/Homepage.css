@@ -1,7 +1,7 @@
 .page-title-bar-title {
     border-bottom: 1px solid;
     padding-bottom: 10px;
-    padding-left: 900px;
+    padding-left: 650px;
 }
 
 /* .button-placement {
@@ -11,13 +11,13 @@
 .button-placement{
     display: flex;
     flex-direction: row;
-    width: 15%;
+    width: 20%;
     justify-content: center;
 }
 
 .place{
     padding-bottom: 10px;
-    padding-left: 950px;
+    padding-left: 700px;
     justify-content: center;
    
 }
