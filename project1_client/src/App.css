@@ -13,6 +13,12 @@
   }
 }
 
+.page-title-bar-title {
+  border-bottom: 1px solid;
+  padding-bottom: 10px;
+  padding-left: 900px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

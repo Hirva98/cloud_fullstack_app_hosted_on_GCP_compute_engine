@@ -1,0 +1,23 @@
+.page-title-bar-title {
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+    padding-left: 900px;
+}
+
+/* .button-placement {
+    padding-left: 10px;
+   
+} */
+.button-placement{
+    display: flex;
+    flex-direction: row;
+    width: 15%;
+    justify-content: center;
+}
+
+.place{
+    padding-bottom: 10px;
+    padding-left: 950px;
+    justify-content: center;
+   
+}

@@ -1,0 +1,32 @@
+.App {
+    text-align: center;
+  }
+  
+  .join_text{
+    padding-bottom: 10px;
+    padding-left: 950px;
+    justify-content: center;
+  }
+  .page-title-bar-title {
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+    padding-left: 1000px;
+  }
+  
+.form_component{
+    padding-bottom: 10px;
+    padding-left: 900px;
+    justify-content: center;
+}
+
+.form_submit{
+    padding-bottom: 10px;
+    padding-left: 960px;
+    justify-content: center;
+}
+  
+.input_style{
+    padding-bottom: 10px;
+    padding-left: 10px;
+    justify-content: center;
+}

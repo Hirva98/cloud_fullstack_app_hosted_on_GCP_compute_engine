@@ -4,8 +4,10 @@ import Axios from 'axios'
 import { AutoComplete, Button, Card, Col, Dropdown, Row, Typography,Menu, Divider,Input, Space ,} from 'antd'
 import { DownOutlined, SearchOutlined,AudioOutlined  } from "@ant-design/icons";
 import { serverPath }from './path'
-import './Display.css'
+import './Search.css'
 
+
+const { Title } = Typography
 const Search = () => {
 
     const { Search } = Input;
@@ -51,16 +53,10 @@ const Search = () => {
 return (
     <div>
         <Fragment>
+        <Title level={3} className="page-title-bar-title" >Search for a Student here</Title>
         <Row>
-          <Col xs={12}>
-            <div class="main">
-              <h2 style={{ marginTop: "30px", marginBottom: "30px" }}>
-                {" "}
-                Search for Student information here
-              </h2>
-            </div>
-          </Col>
-          <Col xs={24} className="join_text">
+
+        <Col xs={24} className="join_text">
                           <Button
                             type="link"
                             onClick={()=>{history.push('/')}}
@@ -69,10 +65,10 @@ return (
                             Home Page
                           </Button>
                         </Col>
-
+          
         </Row>
         
-        <Space direction="vertical">
+        <Space className="search_bar" direction="vertical">
     <Search placeholder="Search by id, fname or lname" onSearch={()=>{searchAll()}} onChange={(e) => {setSearchValue(e.target.value)}} style={{ width: 100 }} />
     
  

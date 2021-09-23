@@ -5,7 +5,7 @@ import { Button, Card, Col, Row, Typography } from 'antd';
 import './Display.css';
 import { serverPath }from './path'
 
-
+const { Title } = Typography
 const Display = () => {
 
     const history = useHistory();
@@ -28,11 +28,10 @@ useEffect(() =>{
 return (
     <div>
         <Fragment>
+        <Title level={3} className="page-title-bar-title" >All Students</Title>
         <Row>
-          <Col xs={24}>
-              
-            <Row gutter={[40, 16]}>
-            <Col xs={24} className="join_text">
+
+        <Col xs={24} className="join_text">
                           <Button
                             type="link"
                             onClick={()=>{history.push('/')}}
@@ -41,6 +40,13 @@ return (
                             Home Page
                           </Button>
                         </Col>
+          
+        </Row>
+        <Row>
+          <Col xs={24}>
+              
+            <Row gutter={[40, 16]}>
+            
               {viewData &&
                 viewData.map((d, index) => (
                   <Col className="gutter-row" span={6} key={index}>

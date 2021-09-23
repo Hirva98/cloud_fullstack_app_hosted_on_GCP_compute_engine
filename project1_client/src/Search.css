@@ -1,15 +1,16 @@
-
 .join_text{
     color: black !important;
-    padding-left: 900px;
-    
-    
+    padding-left: 1000px;
 }
 
 .page-title-bar-title {
     border-bottom: 1px solid;
     padding-bottom: 10px;
-    padding-left: 2000px;
+    padding-left: 900px;
 }
 
-
+.search_bar{
+   
+    padding-bottom: 10px;
+    padding-left: 900px;
+}
